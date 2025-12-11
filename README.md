@@ -22,7 +22,9 @@ For the tailwind classes check the preset theme: https://github.com/JavierBrookt
 
 ## Usage
 
-your tailwind input css file should like this:
+### 1. All-in-one import (recommended)
+
+When importing the styles, instead of importing the tailwind css file, importing this preset in the css file:
 
 ```css
 @import "tw-preset-radix";
@@ -38,4 +40,17 @@ export default function Page() {
   // `text-accent-contrast` will be `color: var(--accent-contrast);`
   return <div className="bg-tomato-1 text-accent-contrast">Hello</div>;
 }
+```
+
+### 2. Manual import (advanced)
+
+Note that you don't have to import tailwind or radix-themes styles, this preset will handle that for you. If you want to import it yourself, you can use the `./theme.css` file:
+
+```css
+@layer theme, base, radix-themes, components, utilities;
+
+@import "tailwindcss"; /* <-- import the tailwind styles (they have theme, base, components, utilities layers already assigned) */
+@import "@radix-ui/themes/styles.css" layer(radix-themes); /* <-- import the radix-themes styles */
+
+@import "tw-preset-radix/theme.css"; /* <-- import the preset */
 ```

@@ -7,11 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@radix-ui/themes':
         specifier: ^3.2.1
         version: 3.2.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-    devDependencies:
       '@types/node':
         specifier: ^20.4.9
         version: 20.17.19
